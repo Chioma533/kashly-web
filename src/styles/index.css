@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: white;
+  border: none;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo .image{
+  background-color: #50C878;
+  padding: 8px;
+  width: 45px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(#50C878, green);
+}
+
+.logo .text {
+  margin-left: 5px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+nav ul{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+nav ul li:hover{
+  color: #50C878;
+}
+
+nav ul button{
+  background-color: #50C878;
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+nav ul button:hover{
+  background: #27924b;
+}
+
+.sect1{
+  background: #dcffe7;
+  display: flex;  
+  justify-content: space-evenly;
+  padding: 70px;
+}
+
+.sect1 .text-box{
+  font-size: 40px;
+  width: 700px;
+}
+
+.sect1 .text-box h2 span{
+  color: #27924b;
+}
+
+.sect1 .text-box p{
+  font-size: 25px;
+}
+
+.phone{
+  border: 1px solid black;
+  border-radius: 60px;
+  background-color: black;
+}
+
+.phone .phone-border{
+  border: 1px solid black;
+  width: 300px;
+  height: 600px;
+  border-radius: 60px;
+  margin: 10px;
+  background-color: white;
+}
+
+.phone .phone-border .camera {
+  background: black;
+  height: 25px;
+  margin: 10px auto;
+  width: 100px;
+  border-radius: 15px;
+  position: relative;
+  top: 20px;
+}
+
+.phone .phone-border .phone-header{
+  background-color: #408040;
+  height: 80px;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin: -10px auto;
+  width: 298px;
+}
+
+
+

@@ -1,0 +1,579 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --theme-color: #10b981;
+  --text-color: #1f2937;
+  --text-color: #1f2937;
+  --dark-theme: #065f46;
+  --theme-bacground: #e8fff7;
+}
+
+/* NAVIGATION BAR CSS */
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+.navbar .logo-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo-holder .logo-icon {
+  background: linear-gradient(var(--theme-color));
+  color: white;
+  padding: 6px;
+  width: 50px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.navbar .logo-holder div {
+  color: var(--text-color);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-left: 0.2rem;
+}
+
+.sign-btn {
+  background: #047857;
+  color: white;
+  border: transparent;
+  height: 33px;
+  width: 70px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.sign-btn:hover {
+  background: #10b981;
+}
+
+/* HERO SECTION CSS */
+
+.hero-section {
+  background: var(--theme-bacground);
+  padding: 20px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hero-text-box {
+  margin-top: 70px;
+}
+
+.hero-text-box h1 {
+  font-size: 65px;
+  font-weight: 500;
+}
+
+.hero-text-box h1 span {
+  color: var(--theme-color);
+}
+
+.hero-text-box p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.btn-holders .get-started {
+  height: 40px;
+  width: 170px;
+  background: var(--theme-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-holders .sign-in {
+  height: 40px;
+  width: 100px;
+  background: transparent;
+  margin-left: 10px;
+  border: 1px solid lightgray;
+  color: var(--theme-color);
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.hero-last-text {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  /* justify-content: space-between; */
+  /* width: 350px; */
+}
+
+.hero-last-text .secure {
+  display: flex;
+  flex-direction: direction;
+  align-items: center;
+  gap: 5px;
+}
+
+.secure svg {
+  height: 20px;
+  width: 20px;
+}
+
+.secure p {
+  font-size: small;
+}
+
+.hero-last-text .support {
+  display: flex;
+  flex-direction: direction;
+  align-items: center;
+  gap: 5px;
+}
+
+.support p {
+  font-size: small;
+}
+
+.support svg {
+  height: 20px;
+  width: 20px;
+}
+
+/* PHONE CSS */
+
+.hero-img .kashly-phone {
+  border: 1px solid black;
+  /* height: 500px; */
+  width: fit-content;
+  padding: 8px;
+  border-radius: 60px;
+  background: black;
+}
+
+.hero-img .kashly-phone .phone-border {
+  border: 1px solid black;
+  height: 500px;
+  width: 250px;
+  border-radius: 52px;
+  background: #ffff;
+}
+
+.hero-img .kashly-phone .phone-border .phone-header {
+  border: 1px solid var(--theme-color);
+  height: 85px;
+  background: var(--theme-color);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.hero-img .kashly-phone .phone-border .phone-header .header-logo {
+  margin: 10px 0 0 70px;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.hero-img .kashly-phone .phone-border .phone-header .header-logo svg {
+  color: white;
+  height: 35px;
+}
+
+.hero-img .kashly-phone .phone-border .phone-header .header-logo div {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.hero-img .kashly-phone .phone-border .kashly-balance {
+  /* border: 1px solid black; */
+  background: var(--theme-bacground);
+  margin: 15px 15px 0 15px;
+  padding: 10px;
+  height: 80px;
+  color: var(--theme-color);
+  border-radius: 8px;
+}
+
+.dynamic {
+  border: 1px solid black;
+  background: black;
+  width: 80px;
+  margin: 10px auto;
+  height: 15px;
+  border-radius: 10px;
+}
+
+.hero-img .kashly-phone .phone-border .kashly-balance p {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.card-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-box .savings {
+  /* border: 1px solid black; */
+  width: 100%;
+  margin: 15px 7.5px 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  color: var(--theme-color);
+  background: var(--theme-bacground);
+  border-radius: 5px;
+  font-size: small;
+}
+
+.card-box .savings svg {
+  width: 20px;
+  height: 30px;
+  stroke-width: 5;
+}
+
+.card-box .profile {
+  /* border: 1px solid black; */
+  width: 100%;
+  margin: 15px 15px 0 7.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  color: var(--theme-color);
+  background: var(--theme-bacground);
+  border-radius: 5px;
+  font-size: small;
+}
+
+.card-box .profile svg {
+  width: 20px;
+  height: 30px;
+  stroke-width: 5;
+}
+
+/* SECTION1 CSS */
+
+.section1 {
+  padding: 100px 10px 100px 10px;
+}
+
+.section1 .section1-header h1 {
+  font-size: 50px;
+  color: var(--text-color);
+}
+
+.section1 .section1-header {
+  text-align: center;
+}
+h1 .section1 .section-header p {
+  font-size: 20px;
+  margin: 10px 0;
+  color: var(--text-color);
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  /* color: #9c9c1a; */
+}
+
+.icon-box .box-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.icon-box .boxes {
+  max-width: 400px;
+  width: 100%;
+  margin: 10px;
+  padding: 20px;
+  background: white;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 8px;
+
+  box-shadow: 1px 1px 3px rgb(230, 230, 230);
+}
+
+.icon-box .boxes svg {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-box .boxes h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.icon-box .boxes p {
+  font-size: 15px;
+  color: var(--text-color);
+  margin-top: 35px;
+}
+
+/* SECTION 2 CSS */
+.sect2 {
+  padding: 30px;
+}
+
+.sect2 .sect2-header h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.sect2 .sect2-header p {
+  text-align: center;
+  font-size: 17px;
+}
+
+.sect2-box-grid {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.sect2-box-grid div {
+  border: 1px solid rgb(226, 226, 226);
+  width: 100%;
+  margin: 0 10px;
+  padding: 30px 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px rgb(204, 204, 204);
+  text-align: center;
+}
+
+.sect2-box-grid div svg {
+  background: var(--theme-bacground);
+  padding: 9px;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  color: var(--theme-color);
+}
+
+.sect2-box-grid div h3 {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.sect2-box-grid div p {
+  margin: 25px 0;
+  line-height: 25px;
+  font-size: 17px;
+}
+
+/* SECTION 3 CSS */
+
+.sect3 {
+  background: var(--theme-color);
+  margin: 50px 0 0 0;
+  height: max-content;
+  padding: 100px 50px;
+}
+
+.sect3 h2 {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+
+.sect3 p {
+  font-size: 21px;
+  text-align: center;
+  color: white;
+}
+
+.sect3 .start-journey {
+display: block;
+  width: 100%;
+  height: 45px;
+  margin: 20px 0 10px 0;
+  font-size: 17px;
+  background: white;
+  color: var(--theme-color);
+  border-radius: 5px;
+  border: none;
+}
+.sect3 .start-journey:hover {
+  font-size: 17px;
+  background: var(--theme-color);
+  color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.sect3 .sign-in {
+  display: block;
+  width: 100%;
+  height: 45px;
+  margin: 0 0 10px 0;
+  font-size: 17px;
+  background: transparent;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+/* FOOTER CSS */
+  footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  footer .logo-footer {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-footer .logo {
+    background: var(--theme-color);
+    padding: 5px;
+    width: 30px;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-weight: 700;
+  }
+
+  .logo-footer p{
+    font-weight: 600;
+  }
+
+  footer .terms {
+    font-size: 13px;
+  }
+
+/* MEDIA QUERY CSS */
+
+@media screen and (max-width: 788px) {
+  .hero-section {
+    flex-wrap: wrap;
+  }
+
+  .hero-img {
+    margin: auto;
+  }
+
+  .hero-section .hero-text-box h1 {
+    font-size: 35px;
+    /* width: 340px; */
+  }
+
+  .hero-section .hero-text-box .text {
+    font-size: 17px;
+  }
+
+  .hero-last-text .secure .p {
+    font-size: 10px;
+  }
+
+  .box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sect2 .sect2-header h1 {
+    font-size: 35px;
+  }
+
+  .sect2 .sect2-header p {
+    font-size: 15px;
+  }
+
+  .sect2-box-grid {
+    flex-wrap: wrap;
+  }
+
+  .sect2-box-grid div {
+    margin: 10px 0;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
+
+  footer .terms {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/* SECTION1 MEDIA QUUERY CSS */
+
+@media screen and (max-width: 620px) {
+  .section1 .section1-header h1 {
+    font-size: 45px;
+  }
+
+  .section1 .section-header p {
+    font-size: 15px;
+  }
+
+  .icon-box .box-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon-box .boxes h4 {
+    font-size: 18px;
+  }
+
+  .icon-box .boxes p {
+    font-size: 14px;
+  }
+
+  .sect3 h2 {
+    font-size: 37px;
+    text-align: center;
+    color: white;
+    margin: 0 0 10px 0;
+  }
+
+  .sect3 p {
+    font-size: 15px;
+    text-align: center;
+    color: white;
+  }
+}
