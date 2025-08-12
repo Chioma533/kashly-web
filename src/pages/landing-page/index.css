@@ -45,19 +45,19 @@ code {
 }
 
 .navbar .logo-holder .logo-icon {
-  background: linear-gradient(var(--theme-color));
+  background: linear-gradient(to right, var(--theme-color), rgb(151, 226, 52));
   color: white;
   padding: 6px;
-  width: 50px;
+  width: 40px;
   text-align: center;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 
 .navbar .logo-holder div {
   color: var(--text-color);
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin-left: 0.2rem;
 }
@@ -68,7 +68,7 @@ code {
   border: transparent;
   height: 33px;
   width: 70px;
-  border-radius: 3px;
+  border-radius: 4px;
   font-weight: 500;
   font-size: 14px;
 }
@@ -94,8 +94,8 @@ code {
 }
 
 .hero-text-box h1 {
-  font-size: 65px;
-  font-weight: 500;
+  font-size: 60px;
+  font-weight: 600;
 }
 
 .hero-text-box h1 span {
@@ -375,6 +375,7 @@ h1 .section1 .section-header p {
   border-radius: 10px;
   box-shadow: 1px 1px 3px rgb(204, 204, 204);
   text-align: center;
+
 }
 
 .sect2-box-grid div svg {
@@ -384,17 +385,19 @@ h1 .section1 .section-header p {
   height: 60px;
   border-radius: 10px;
   color: var(--theme-color);
+  margin: auto;
 }
 
 .sect2-box-grid div h3 {
   margin: 20px 0;
   font-size: 20px;
+  font-weight: 600;
 }
 
 .sect2-box-grid div p {
   margin: 25px 0;
   line-height: 25px;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 /* SECTION 3 CSS */
@@ -461,21 +464,24 @@ display: block;
   footer .logo-footer {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   .logo-footer .logo {
-    background: var(--theme-color);
-    padding: 5px;
-    width: 30px;
+    background: linear-gradient(to right, var(--theme-color), rgb(151, 226, 52));
     color: white;
     text-align: center;
-    border-radius: 4px;
-    margin-right: 5px;
+    border-radius: 7px;
     font-weight: 700;
+    font-size: 1rem;
+    padding: 6px;
+    width: 35px;
+    padding-left: 12px;
   }
 
   .logo-footer p{
     font-weight: 600;
+    margin-left: 5px;
   }
 
   footer .terms {
