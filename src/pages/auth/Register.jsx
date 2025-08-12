@@ -4,8 +4,10 @@ import { useAuth } from '../../contexts/AuthContext';
 import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
-import { Eye, EyeOff, Mail, Lock, User, Phone, Chrome, Building, UserCheck } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, User, Phone, Chrome, Building, UserCheck, CalendarDays } from 'lucide-react';
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -22,7 +24,7 @@ export default function Register() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const { signUp, signInWithGoogle, user, authError, clearError } = useAuth();
+  const { signUp, user, authError, clearError } = useAuth();
   const navigate = useNavigate();
 
   // Redirect if already logged in
@@ -51,12 +53,6 @@ export default function Register() {
     if (success) setSuccess('');
   };
 
-  const handleSelectChange = (value) => {
-    setFormData(prev => ({
-      ...prev,
-      accountType: value
-    }));
-  };
 
   const validateForm = () => {
     if (!formData.fullName.trim()) {
@@ -113,7 +109,7 @@ export default function Register() {
       };
 
       const result = await signUp(formData.email, formData.password, userData);
-      
+
       if (result.success) {
         setSuccess('Account created successfully! Please check your email to verify your account.');
         setFormData({
@@ -134,26 +130,7 @@ export default function Register() {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    setError('');
-    setIsLoading(true);
-    
-    try {
-      const result = await signInWithGoogle();
-      if (!result.success) {
-        setError(result.error || 'Google sign in failed. Please try again.');
-      }
-    } catch (err) {
-      setError('Google sign in failed. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const accountTypeOptions = [
-    { value: 'personal', label: 'Personal Account', icon: User },
-    { value: 'business', label: 'Business Account', icon: Building }
-  ];
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/10 via-background to-secondary/10 flex items-center justify-center p-4">
@@ -174,33 +151,13 @@ export default function Register() {
               <p className="text-error text-sm font-medium">{error}</p>
             </div>
           )}
-          
+
           {success && (
             <div className="mb-6 p-4 bg-success/10 border border-success/20 rounded-lg">
               <p className="text-success text-sm font-medium">{success}</p>
             </div>
           )}
 
-          {/* Google Sign In */}
-          <Button
-            type="button"
-            variant="outline"
-            onClick={handleGoogleSignIn}
-            disabled={isLoading}
-            className="w-full mb-6 h-12 text-base"
-          >
-            <Chrome className="w-5 h-5 mr-3" />
-            Continue with Google
-          </Button>
-
-          <div className="relative mb-6">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-border"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-3 bg-card text-muted-foreground">Or continue with email</span>
-            </div>
-          </div>
 
           {/* Registration Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -225,7 +182,7 @@ export default function Register() {
                 </div>
               </div>
 
-              <div>
+              {/* <div>
                 <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                   Email Address
                 </label>
@@ -243,7 +200,7 @@ export default function Register() {
                     className="pl-10 h-12"
                   />
                 </div>
-              </div>
+              </div> */}
 
               <div>
                 <label htmlFor="phoneNumber" className="block text-sm font-medium text-foreground mb-2">
@@ -263,26 +220,6 @@ export default function Register() {
                     className="pl-10 h-12"
                   />
                 </div>
-              </div>
-
-              <div>
-                <label htmlFor="accountType" className="block text-sm font-medium text-foreground mb-2">
-                  Account Type
-                </label>
-                <Select
-                  value={formData.accountType}
-                  onValueChange={handleSelectChange}
-                  placeholder="Select account type"
-                >
-                  {accountTypeOptions.map((option) => (
-                    <Select.Option key={option.value} value={option.value}>
-                      <div className="flex items-center">
-                        <option.icon className="w-4 h-4 mr-2" />
-                        {option.label}
-                      </div>
-                    </Select.Option>
-                  ))}
-                </Select>
               </div>
 
               <div>
@@ -357,7 +294,7 @@ export default function Register() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full h-12 text-base font-semibold bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
+              className="w-full h-12 text-base font-semibold from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
             >
               {isLoading ? (
                 <div className="flex items-center">
@@ -378,7 +315,7 @@ export default function Register() {
                 to="/login"
                 className="text-primary hover:text-primary/80 font-semibold transition-colors"
               >
-                Sign in here
+                Sign in
               </Link>
             </p>
           </div>

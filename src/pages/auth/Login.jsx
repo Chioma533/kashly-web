@@ -131,26 +131,8 @@ export default function Login() {
             </div>
           )}
 
-          {/* Google Sign In */}
-          <Button
-            type="button"
-            variant="outline"
-            onClick={handleGoogleSignIn}
-            disabled={isLoading}
-            className="w-full mb-6 h-12 text-base"
-          >
-            <Chrome className="w-5 h-5 mr-3" />
-            Continue with Google
-          </Button>
-
-          <div className="relative mb-6">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-border"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-3 bg-card text-muted-foreground">Or continue with email</span>
-            </div>
-          </div>
+        
+        
 
           {/* Login Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -222,7 +204,7 @@ export default function Login() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full h-12 text-base font-semibold bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
+              className="w-full h-12 text-base font-semibold from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
             >
               {isLoading ? (
                 <div className="flex items-center">

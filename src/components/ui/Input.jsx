@@ -32,8 +32,27 @@ const Input = React.forwardRef(({
             />
         );
     }
+    // Calendar input-specific styles
+    if (type === "date" || type === "datetime-local") {
+        return (
+            <input
+                type={type}
+                className={cn(
+                    baseInputClasses,
+                    "appearance-none bg-transparent",
+                    error && "border-destructive focus-visible:ring-destructive",
+                    className
+                )}
 
-    // Radio button-specific styles
+                ref={ref}
+                id={inputId}
+                value={selectedDate ? selectedDate.toISOString().slice(0, 16) : ""}
+                {...props}
+                readOnly
+            />
+        );
+    }
+        // Radio button-specific styles
     if (type === "radio") {
         return (
             <input
