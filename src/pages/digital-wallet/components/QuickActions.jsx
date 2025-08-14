@@ -4,56 +4,72 @@ import Icon from '../../../components/AppIcon';
 
 
 const QuickActions = ({ onSendMoney, onReceiveMoney, onAddFunds, onConvertCurrency }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const actions = [
     {
       id: 'send',
-      label: 'Send Money',
+      label: 'Transfer',
       icon: 'Send',
       color: 'primary',
       action: () => navigate('/send-money'),
-      description: 'Transfer funds to friends'
+      // description: 'Transfer funds to friends'
     },
     {
       id: 'receive',
-      label: 'Receive',
+      label: 'Withdraw',
       icon: 'Download',
       color: 'secondary',
       action: onReceiveMoney,
-      description: 'Get paid by others'
+      // description: 'Get paid by others'
     },
     {
       id: 'add',
-      label: 'Add Funds',
+      label: 'Deposit',
       icon: 'Plus',
       color: 'success',
       action: onAddFunds,
-      description: 'Top up your wallet'
+      // description: 'Top up your wallet'
     },
     {
       id: 'convert',
-      label: 'Convert',
-      icon: 'ArrowRightLeft',
+      label: 'Budgets',
+      icon: 'ChartPie',
       color: 'accent',
-      action: onConvertCurrency,
-      description: 'Exchange currencies'
+      // action: onConvertCurrency,
+      // description: 'Exchange currencies'
+    },
+    {
+      id: 'learn',
+      label: 'Learn',
+      icon: 'Book',
+      color: '',
+      action: () => navigate('/buy-crypto'),
+      // description: 'Purchase cryptocurrencies'
+    },
+    {
+      id: 'goals',
+      label: 'Goals',
+      icon: 'Target',
+      color: 'Warning',
+      action: () => navigate('/sell-crypto'),
+      // description: 'Sell your crypto assets'
     }
   ];
 
   return (
-    <div className="bg-card border border-border rounded-xl p-6 mb-6">
+    <div className=" border border-border rounded-xl p-6 mb-6">
       <h2 className="text-lg font-semibold text-foreground mb-4">Quick Actions</h2>
       
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 ">
         {actions.map((action) => (
           <button
             key={action.id}
             onClick={action.action}
-            className="flex flex-col items-center space-y-3 p-4 rounded-lg border border-border hover:border-primary hover:bg-primary/5 transition-all duration-200 group"
+            className="flex flex-col items-center space-y-1 p-4 rounded-lg border border-bo  rder hover:text-white hover:border-primary transition-all duration-200 group"
           >
-            <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
-              action.color === 'primary' ? 'bg-primary/10 group-hover:bg-primary text-primary group-hover:text-primary-foreground' :
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+              action.color === 'primary' ? 'bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white' :
               action.color === 'secondary' ? 'bg-secondary/10 group-hover:bg-secondary text-secondary group-hover:text-secondary-foreground' :
               action.color === 'success' ? 'bg-success/10 group-hover:bg-success text-success group-hover:text-success-foreground' :
               'bg-accent/10 group-hover:bg-accent text-accent group-hover:text-accent-foreground'

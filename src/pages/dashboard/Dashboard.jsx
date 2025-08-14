@@ -138,15 +138,6 @@ export default function Dashboard() {
       <Header title="Dashboard" />
       
       <div className="container mx-auto px-4 py-6 space-y-6">
-        {/* Welcome Message */}
-        <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-white">
-          <h1 className="text-2xl font-bold mb-2">
-            Welcome back, {userProfile?.full_name || 'User'}! 👋
-          </h1>
-          <p className="text-white/90">
-            Here's what's happening with your finances today.
-          </p>
-        </div>
 
         {/* Error Message */}
         {error && (

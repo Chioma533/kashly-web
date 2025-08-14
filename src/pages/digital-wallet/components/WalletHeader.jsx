@@ -47,10 +47,10 @@ const WalletHeader = ({ totalBalance, balanceChange, onRefresh }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-2xl p-6 mb-6">
+    <div className="bg-emerald-400 text-primary-foreground rounded-2xl p-6 mb-6 sm:-mt-13">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-2">
-          <Icon name="Wallet" size={24} className="text-primary-foreground" />
+          <Icon name="Wallet" size={20} className="text-primary-foreground" />
           <h1 className="text-xl font-semibold">Total Balance</h1>
         </div>
         
@@ -78,7 +78,7 @@ const WalletHeader = ({ totalBalance, balanceChange, onRefresh }) => {
       <div className="space-y-2">
         {isVisible ? (
           <>
-            <div className="text-4xl font-bold font-mono">
+            <div className="text-4xl font-bold ">
               {formatCurrency(animatedBalance)}
             </div>
             <div className="flex items-center space-x-2">

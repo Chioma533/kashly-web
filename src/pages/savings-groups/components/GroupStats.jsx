@@ -79,7 +79,7 @@ const GroupStats = ({ stats }) => {
       </div>
 
       {/* Achievement Badges */}
-      {stats.recentBadges && stats.recentBadges.length > 0 && (
+      {/* {stats.recentBadges && stats.recentBadges.length > 0 && (
         <div className="mt-4 pt-4 border-t border-border">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-foreground">Recent Achievements</span>
@@ -98,7 +98,7 @@ const GroupStats = ({ stats }) => {
             ))}
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

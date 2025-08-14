@@ -413,10 +413,10 @@ const GroupDetails = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      <TabNavigation />
+      {/* <Header /> */}
+      {/* <TabNavigation /> */}
       
-      <main className="pt-32 lg:pt-36 pb-20">
+      <main className="lg:pt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <BreadcrumbTrail />
           
@@ -487,7 +487,7 @@ const GroupDetails = () => {
         group={groupData}
       />
       
-      <FloatingActionButton />
+      {/* <FloatingActionButton /> */}
     </div>
   );
 };

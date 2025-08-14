@@ -62,7 +62,7 @@ const GroupFilters = ({ onFilterChange, onSearchChange, searchQuery }) => {
       </div>
 
       {/* Sort Options */}
-      <div className="flex items-center justify-between">
+      {/* <div className="flex flex-col items-center justify-between">
         <span className="text-sm font-medium text-muted-foreground">Sort by:</span>
         
         <div className="flex space-x-1">
@@ -80,7 +80,7 @@ const GroupFilters = ({ onFilterChange, onSearchChange, searchQuery }) => {
             </Button>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Active Filters Display */}
       {(activeFilter !== 'all' || sortBy !== 'recent') && (

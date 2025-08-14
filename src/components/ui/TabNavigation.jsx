@@ -43,8 +43,8 @@ const TabNavigation = () => {
   };
 
   return (
-    <div className="fixed top-16 lg:top-18 left-0 right-0 bg-card border-b border-border z-100">
-      <nav className="flex items-center justify-center">
+    <div className="fixed bottom-0 left-0 w-full px-4 md:sticky md:top-[64px] bg-white shadow-lg z-50">
+      <nav className="flex items-center justify-center mx-4">
         <div className="flex space-x-0 bg-muted rounded-lg p-1 m-4">
           {tabs.map((tab) => {
             const isActive = activeTab?.id === tab.id;
@@ -66,15 +66,7 @@ const TabNavigation = () => {
                   className={isActive ? 'text-primary-foreground' : 'text-current'}
                 />
                 <span>{tab.label}</span>
-                
-                {/* Progress indicator for gamification */}
-                {isActive && (
-                  <div className="flex space-x-1 ml-2">
-                    <div className="w-1.5 h-1.5 bg-secondary rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-secondary/60 rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-secondary/30 rounded-full"></div>
-                  </div>
-                )}
+              
               </Link>
             );
           })}

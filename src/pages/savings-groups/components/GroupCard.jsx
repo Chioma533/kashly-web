@@ -57,7 +57,7 @@ const GroupCard = ({ group, onContribute, onViewDetails, onChat }) => {
             <h3 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors">
               {group.name}
             </h3>
-            {getStatusBadge()}
+            {/* {getStatusBadge()} */}
           </div>
           <p className="text-muted-foreground text-sm line-clamp-2">
             {group.description}
@@ -191,11 +191,11 @@ const GroupCard = ({ group, onContribute, onViewDetails, onChat }) => {
       </div>
 
       {/* Achievement Badge */}
-      {group.isNewAchievement && (
+      {/* {group.isNewAchievement && (
         <div className="absolute -top-2 -right-2 bg-secondary text-secondary-foreground rounded-full p-2 shadow-soft">
           <Icon name="Star" size={16} className="fill-current" />
         </div>
-      )}
+      )} */}
     </div>
   );
 };
