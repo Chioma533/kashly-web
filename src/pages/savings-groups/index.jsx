@@ -227,7 +227,7 @@ const SavingsGroups = () => {
         <Header />
         <TabNavigation />
         
-        <main className="pt-32 lg:pt-36 pb-20">
+        <main className="pt-2 lg:pt-6 pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <BreadcrumbTrail />
             
@@ -314,7 +314,7 @@ const SavingsGroups = () => {
           onCreateGroup={handleCreateGroup}
         />
 
-        <FloatingActionButton />
+        {/* <FloatingActionButton /> */}
       </div>
     </>
   );

@@ -101,6 +101,7 @@ const DigitalWallet = () => {
       icon: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=40&h=40&fit=crop&crop=center'
     }
   ];
+
   const [transactions, setTransactions] = useState([
     {
       id: 'tx-001',
@@ -154,7 +155,8 @@ const DigitalWallet = () => {
       status: 'completed',
       timestamp: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000)
     }
-  ]);  const [wallet, setWallet] = useState([]);
+  ]); 
+   const [wallet, setWallet] = useState([]);
   // const [fiatAssets, setFiatAssets] = useState([]);
   // const [cryptoAssets, setCryptoAssets] = useState([]);
   const navigate = useNavigate()
@@ -332,9 +334,9 @@ const DigitalWallet = () => {
         <Header />
         <TabNavigation />
 
-        <main className="pt-32 lg:pt-36 pb-20">
+        <main className="pt-5 lg:pt-6 mb-1">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <BreadcrumbTrail />
+            {/* <BreadcrumbTrail /> */}
 
             {/* Wallet Header */}
             <WalletHeader
@@ -352,16 +354,16 @@ const DigitalWallet = () => {
             />
 
             {/* Asset Tabs */}
-            <AssetTabs
+            {/* <AssetTabs
               activeTab={activeTab}
               onTabChange={setActiveTab}
               fiatAssets={fiatAssets}
               cryptoAssets={cryptoAssets}
               onCreateWallet={createCryptoWallet}
-            />
+            /> */}
 
             {/* Asset Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {(activeTab === 'fiat' ? fiatAssets : cryptoAssets).map((asset) => (
                 <AssetCard
                   key={asset.id}
@@ -373,7 +375,7 @@ const DigitalWallet = () => {
                   onSell={handleSellCrypto}
                 />
               ))}
-            </div>
+            </div> */}
 
             {/* Transaction History */}
             <TransactionHistory
@@ -392,7 +394,7 @@ const DigitalWallet = () => {
           onConvert={handleConvertCurrency}
         />
 
-        <FloatingActionButton />
+        {/* <FloatingActionButton /> */}
       </div>
     </>
   );

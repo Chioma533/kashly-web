@@ -10,7 +10,7 @@ const TabNavigation = ({ activeTab, onTabChange }) => {
   ];
 
   return (
-    <div className="bg-card rounded-lg shadow-soft mb-6">
+    <div className="fixed bottom-0 left-0 w-full bg-white shadow-lg z-50">
       <nav className="flex overflow-x-auto">
         {tabs.map((tab) => (
           <button
