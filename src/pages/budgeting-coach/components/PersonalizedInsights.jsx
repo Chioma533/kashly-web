@@ -1,23 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
 const PersonalizedInsights = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const insights = [
     {
       id: 1,
       type: 'tip',
       icon: 'Lightbulb',
       title: 'Reduce Food Spending',
-      description: `You've spent 15% more on food this month compared to last month. Consider meal planning to save an average of $120 monthly.`,action: 'View Meal Planning Tips',priority: 'high',category: 'Food'
+      description: `You've spent 15% more on food this month compared to last month. Consider meal planning to save an average of $120 monthly.`,
+      action: 'View Meal Planning Tips',
+      priority: 'high',
+      category: 'Food'
     },
     {
       id: 2,
-      type: 'achievement',icon: 'Award',title: 'Transportation Goal Achieved!',description: 'Great job staying under your transportation budget for 3 months straight. You saved $45 this month.',action: 'Set New Goal',priority: 'success',category: 'Transportation'
+      type: 'achievement',
+      icon: 'Award',
+      title: 'Transportation Goal Achieved!',
+      description: 'Great job staying under your transportation budget for 3 months straight. You saved $45 this month.',
+      action: 'Set New Goal',
+      priority: 'success',
+      category: 'Transportation'
     },
     {
       id: 3,
-      type: 'warning',icon: 'AlertTriangle',title: 'Entertainment Budget Alert',description: `You're at 93% of your entertainment budget with 8 days left in the month. Consider free activities to stay on track.`,
+      type: 'warning',
+      icon: 'AlertTriangle',
+      title: 'Entertainment Budget Alert',
+      description: `You're at 93% of your entertainment budget with 8 days left in the month. Consider free activities to stay on track.`,
       action: 'View Free Activities',
       priority: 'medium',
       category: 'Entertainment'
@@ -52,6 +66,9 @@ const PersonalizedInsights = () => {
     }
   };
 
+  // Only show first 2 unless "showAll" is true
+  const displayedInsights = showAll ? insights : insights.slice(0, 2);
+
   return (
     <div className="bg-card rounded-lg border border-border p-6 mb-6">
       <div className="flex items-center justify-between mb-6">
@@ -61,8 +78,8 @@ const PersonalizedInsights = () => {
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {insights.map((insight) => (
+      <div className="flex flex-col gap-3">
+        {displayedInsights.map((insight) => (
           <div 
             key={insight.id} 
             className={`rounded-lg border p-4 transition-all duration-200 hover:shadow-soft ${getPriorityColor(insight.priority)}`}
@@ -100,8 +117,21 @@ const PersonalizedInsights = () => {
         ))}
       </div>
 
+      {/* View More / View Less Button */}
+      {insights.length > 2 && (
+        <div className="mt-4 flex justify-center">
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? 'View Less' : 'View More'}
+          </Button>
+        </div>
+      )}
+
       {/* Quick Actions */}
-      <div className="mt-6 pt-6 border-t border-border">
+      {/* <div className="mt-6 pt-6 border-t border-border">
         <h3 className="text-sm font-medium text-foreground mb-4">Quick Actions</h3>
         <div className="flex flex-wrap gap-2">
           <Button variant="secondary" size="sm" iconName="Calculator" iconPosition="left" iconSize={14}>
@@ -117,7 +147,7 @@ const PersonalizedInsights = () => {
             Learning Center
           </Button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

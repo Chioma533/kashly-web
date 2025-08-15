@@ -43,9 +43,9 @@ const TabNavigation = () => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 w-full px-4 md:sticky md:top-[64px] bg-white shadow-lg z-50">
-      <nav className="flex items-center justify-center mx-4">
-        <div className="flex space-x-0 bg-muted rounded-lg p-1 m-4">
+    <div className="fixed -bottom-1 left-0 w-full md:sticky md:top-[64px] bg-transparent z-50">
+      <nav className="flex items-center justify-center m-1">
+        <div className="flex bg-muted rounded-lg p-2">
           {tabs.map((tab) => {
             const isActive = activeTab?.id === tab.id;
             const primaryPath = getPrimaryPath(tab);
@@ -54,7 +54,7 @@ const TabNavigation = () => {
               <Link
                 key={tab.id}
                 to={primaryPath}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-md text-sm font-medium transition-smooth min-w-[120px] justify-center ${
+                className={`flex items-center space-x-2 px-5 py-3 rounded-md text-sm font-medium transition-smooth justify-center ${
                   isActive
                     ? 'bg-primary text-primary-foreground shadow-soft'
                     : 'text-muted-foreground hover:text-foreground hover:bg-background'

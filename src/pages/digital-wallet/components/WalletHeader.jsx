@@ -34,12 +34,12 @@ const WalletHeader = ({ totalBalance, balanceChange, onRefresh }) => {
   };
 
   const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 2,
-    }).format(amount);
-  };
+  return new Intl.NumberFormat('en-NG', {
+    style: 'currency',
+    currency: 'NGN',
+    minimumFractionDigits: 2
+  }).format(amount);
+};
 
   const formatChange = (change) => {
     const sign = change >= 0 ? '+' : '';
@@ -78,17 +78,17 @@ const WalletHeader = ({ totalBalance, balanceChange, onRefresh }) => {
       <div className="space-y-2">
         {isVisible ? (
           <>
-            <div className="text-4xl font-bold ">
+            <div className="text-4xl md:text-5xl m-2 font-bold ">
               {formatCurrency(animatedBalance)}
             </div>
             <div className="flex items-center space-x-2">
               <Icon 
                 name={balanceChange >= 0 ? "TrendingUp" : "TrendingDown"} 
                 size={16} 
-                className={balanceChange >= 0 ? "text-secondary" : "text-error"}
+                className={balanceChange >= 0 ? "text-white" : "text-error"}
               />
               <span className={`text-sm font-medium ${
-                balanceChange >= 0 ? "text-secondary" : "text-error"
+                balanceChange >= 0 ? "text-white" : "text-error"
               }`}>
                 {formatChange(balanceChange)} from last month
               </span>
@@ -104,12 +104,12 @@ const WalletHeader = ({ totalBalance, balanceChange, onRefresh }) => {
       {/* Quick Stats */}
       <div className="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-primary-foreground/20">
         <div className="text-center">
-          <div className="text-sm text-primary-foreground/80">This Month</div>
-          <div className="text-lg font-semibold">+$1,247.30</div>
+          <div className="text-xs text-primary-foreground/80">This Month</div>
+          <div className="text-sm font-semibold">+₦1,247.30</div>
         </div>
         <div className="text-center">
-          <div className="text-sm text-primary-foreground/80">Savings Goal</div>
-          <div className="text-lg font-semibold">73% Complete</div>
+          <div className="text-xs text-primary-foreground/80">Savings Goal</div>
+          <div className="text-sm font-semibold">73% Complete</div>
         </div>
       </div>
     </div>

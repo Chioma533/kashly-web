@@ -334,7 +334,7 @@ const DigitalWallet = () => {
         <Header />
         <TabNavigation />
 
-        <main className="pt-5 lg:pt-6 mb-1">
+        <main className="pt-5 lg:pt-6 lg:mb-[30px] mb-[90px]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* <BreadcrumbTrail /> */}
 

@@ -449,7 +449,7 @@ const FinancialLiteracyHub = () => {
         <Header />
         <TabNavigation />
         
-        <main className="pt-32 lg:pt-36 pb-24">
+        <main className="pt-32 lg:pt-36 pb-24 mb-[240px]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <BreadcrumbTrail />
             
