@@ -6,48 +6,13 @@ import Input from '../../../components/ui/Input';
 const GoalSetting = () => {
   const [activeGoal, setActiveGoal] = useState(null);
   const [newGoalAmount, setNewGoalAmount] = useState('');
+  const [showAllGoals, setShowAllGoals] = useState(false);
 
   const goals = [
-    {
-      id: 1,
-      category: 'Food',
-      currentBudget: 600,
-      suggestedBudget: 550,
-      spent: 520,
-      icon: 'UtensilsCrossed',
-      color: 'bg-secondary',
-      status: 'on-track'
-    },
-    {
-      id: 2,
-      category: 'Entertainment',
-      currentBudget: 300,
-      suggestedBudget: 350,
-      spent: 280,
-      icon: 'Gamepad2',
-      color: 'bg-success',
-      status: 'under-budget'
-    },
-    {
-      id: 3,
-      category: 'Shopping',
-      currentBudget: 500,
-      suggestedBudget: 400,
-      spent: 317,
-      icon: 'ShoppingBag',
-      color: 'bg-warning',
-      status: 'needs-attention'
-    },
-    {
-      id: 4,
-      category: 'Transportation',
-      currentBudget: 400,
-      suggestedBudget: 420,
-      spent: 380,
-      icon: 'Car',
-      color: 'bg-accent',
-      status: 'on-track'
-    }
+    { id: 1, category: 'Food', currentBudget: 600, suggestedBudget: 550, spent: 520, icon: 'UtensilsCrossed', color: 'bg-secondary', status: 'on-track' },
+    { id: 2, category: 'Entertainment', currentBudget: 300, suggestedBudget: 350, spent: 280, icon: 'Gamepad2', color: 'bg-success', status: 'under-budget' },
+    { id: 3, category: 'Shopping', currentBudget: 500, suggestedBudget: 400, spent: 317, icon: 'ShoppingBag', color: 'bg-warning', status: 'needs-attention' },
+    { id: 4, category: 'Transportation', currentBudget: 400, suggestedBudget: 420, spent: 380, icon: 'Car', color: 'bg-accent', status: 'on-track' }
   ];
 
   const getStatusColor = (status) => {
@@ -86,10 +51,10 @@ const GoalSetting = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {goals.map((goal) => {
+        {(showAllGoals ? goals : goals.slice(0, 2)).map((goal) => {
           const spentPercentage = (goal.spent / goal.currentBudget) * 100;
           const isEditing = activeGoal === goal.id;
-          
+
           return (
             <div key={goal.id} className="bg-background rounded-lg border border-border p-4">
               <div className="flex items-center justify-between mb-4">
@@ -104,7 +69,7 @@ const GoalSetting = () => {
                     </span>
                   </div>
                 </div>
-                
+
                 <Button
                   variant="ghost"
                   size="icon"
@@ -139,9 +104,9 @@ const GoalSetting = () => {
                   <span>{Math.round(spentPercentage)}%</span>
                 </div>
                 <div className="w-full bg-muted rounded-full h-2">
-                  <div 
+                  <div
                     className={`h-2 rounded-full transition-all duration-300 ${
-                      spentPercentage > 90 ? 'bg-error' : 
+                      spentPercentage > 90 ? 'bg-error' :
                       spentPercentage > 75 ? 'bg-warning' : 'bg-success'
                     }`}
                     style={{ width: `${Math.min(spentPercentage, 100)}%` }}
@@ -213,6 +178,17 @@ const GoalSetting = () => {
         })}
       </div>
 
+      {/* View More Button */}
+      <div className="flex justify-center mt-4">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => setShowAllGoals(!showAllGoals)}
+        >
+          {showAllGoals ? 'View Less' : 'View More'}
+        </Button>
+      </div>
+
       {/* Quick Actions */}
       <div className="mt-6 pt-6 border-t border-border">
         <h3 className="text-sm font-medium text-foreground mb-4">Quick Budget Actions</h3>
@@ -236,3 +212,4 @@ const GoalSetting = () => {
 };
 
 export default GoalSetting;
+

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from '../../../components/AppIcon';
 
 const BudgetOverview = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const budgetData = {
     totalBudget: 3500,
     totalSpent: 2847,
@@ -33,6 +35,8 @@ const BudgetOverview = () => {
       default: return 'text-muted-foreground';
     }
   };
+
+  const visibleCategories = showAll ? budgetData.categories : budgetData.categories.slice(0, 3);
 
   return (
     <div className="bg-card rounded-lg border border-border p-6 mb-6">
@@ -108,7 +112,7 @@ const BudgetOverview = () => {
 
       {/* Category Breakdown */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {budgetData.categories.map((category, index) => {
+        {visibleCategories.map((category, index) => {
           const categoryPercentage = (category.spent / category.budgeted) * 100;
           const isOverBudget = category.spent > category.budgeted;
           
@@ -150,6 +154,18 @@ const BudgetOverview = () => {
           );
         })}
       </div>
+
+      {/* View More Button */}
+      {budgetData.categories.length > 1 && (
+        <div className="mt-4 flex justify-center">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="text-primary text-sm font-medium hover:bg-primary hover:text-white p-2 rounded-sm"
+          >
+            {showAll ? 'View Less' : 'View More'}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

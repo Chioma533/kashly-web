@@ -15,7 +15,7 @@ const BudgetingCoach = () => {
       <Header />
       <TabNavigation />
       
-      <main className="pt-10 lg:pt-6 pb-20">
+      <main className="pt-10 lg:pt-6 pb-20 md:mb-[10px] mb-[20px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <BreadcrumbTrail />
           
@@ -56,7 +56,7 @@ const BudgetingCoach = () => {
           </div>
 
           {/* Financial Health Score */}
-          <div className="mt-8 bg-card rounded-lg border border-border p-6">
+          {/* <div className="mt-8 bg-card rounded-lg border border-border p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-foreground">Financial Health Score</h2>
               <div className="flex items-center space-x-2">
@@ -87,7 +87,7 @@ const BudgetingCoach = () => {
             <div className="mt-4 w-full bg-muted rounded-full h-2">
               <div className="bg-success h-2 rounded-full transition-all duration-500" style={{ width: '85%' }}></div>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
 
